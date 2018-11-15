@@ -70,7 +70,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\CreditCard.cs" />
+    <Compile Include="Interfaces\ICreditCard.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
+    <Compile Include="Interfaces\IWallet.cs" />
     <Compile Include="Models\Discover.cs" />
     <Compile Include="Models\MasterCard.cs" />
     <Compile Include="Models\Person.cs" />

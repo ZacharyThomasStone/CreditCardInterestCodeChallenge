@@ -8,6 +8,12 @@ namespace CreditCardInterestCalculator.Models
         private double _balance;
         private double _interest;
 
+        public MasterCard(double balance)
+        {
+            SetBalance(balance);
+            SetInterest();
+        }
+
         public double GetInterestRate()
         {
             return _interestRate;
@@ -30,7 +36,7 @@ namespace CreditCardInterestCalculator.Models
 
         public double SetBalance(double balance)
         {
-            return _balance = balance;
+           return _balance = balance;
         }
     }
 }

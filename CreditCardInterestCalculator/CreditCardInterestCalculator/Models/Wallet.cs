@@ -1,33 +1,41 @@
-﻿using CreditCardInterestCalculator.Interfaces;
+﻿using System.Collections.Generic;
+using CreditCardInterestCalculator.Interfaces;
 
 namespace CreditCardInterestCalculator.Models
 {
-    public class Wallet
+    public class Wallet : IWallet
     {
-        private ICreditCard[] _cards;
+        private List<ICreditCard> _cards;
         private double _interest;
 
-        private Wallet(ICreditCard[] cardsToSet)
+        public Wallet(List<ICreditCard> cardsToSet)
         {
             SetCreditCards(cardsToSet);
+            CalculateSimpleInterest();
         }
 
-        public ICreditCard[] SetCreditCards(ICreditCard[] cards)
+        public Wallet()
+        {
+        }
+
+        public List<ICreditCard> SetCreditCards(List<ICreditCard> cards)
         {
             return _cards = cards;
         }
 
-        public ICreditCard[] GetCreditCards()
+
+        public List<ICreditCard> GetCreditCards()
         {
             return _cards;
         }
 
-        public void CalculateInterest()
+        public void CalculateSimpleInterest()
         {
             foreach (ICreditCard card in _cards)
             {
                 _interest += card.GetInterest();
             }
+
         }
 
         public double GetInterest()
@@ -39,5 +47,6 @@ namespace CreditCardInterestCalculator.Models
         {
             return _interest = interest;
         }
+
     }
 }

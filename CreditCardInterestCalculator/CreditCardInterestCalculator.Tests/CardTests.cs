@@ -7,9 +7,9 @@ namespace CreditCardInterestCalculator.Tests
     [TestClass]
     public class CardTests
     {
-        Discover discover = new Discover();
-        MasterCard masterCard = new MasterCard();
-        Visa visa = new Visa();
+        Discover discover = new Discover(100);
+        MasterCard masterCard = new MasterCard(100);
+        Visa visa = new Visa(100);
 
 
         //Discover Card Tests
@@ -23,7 +23,6 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestDiscoverGetInterestMethod()
         {
-            discover.SetBalance(100);
             discover.SetInterest();
             double interest = discover.GetInterest();
             Assert.AreEqual(1, interest);
@@ -32,7 +31,6 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestDiscoverGetBalanceMethod()
         {
-            discover.SetBalance(100);
             double balance = discover.GetBalance();
             Assert.AreEqual(100, balance);
 
@@ -49,7 +47,6 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestMasterCardGetInterestMethod()
         {
-            masterCard.SetBalance(100);
             masterCard.SetInterest();
             double interest = masterCard.GetInterest();
             Assert.AreEqual(5, interest);
@@ -58,7 +55,6 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestMasterCardGetBalanceMethod()
         {
-            masterCard.SetBalance(100);
             double balance = masterCard.GetBalance();
             Assert.AreEqual(100, balance);
 
@@ -75,7 +71,6 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestVisaCardGetInterestMethod()
         {
-            visa.SetBalance(100);
             visa.SetInterest();
             double interest = visa.GetInterest();
             Assert.AreEqual(10, interest);
@@ -84,7 +79,6 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestVisaCardGetBalanceMethod()
         {
-            visa.SetBalance(100);
             double balance = visa.GetBalance();
             Assert.AreEqual(100, balance);
 
