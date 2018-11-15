@@ -14,10 +14,6 @@ namespace CreditCardInterestCalculator.Models
             CalculateSimpleInterest();
         }
 
-        public Wallet()
-        {
-        }
-
         public List<ICreditCard> SetCreditCards(List<ICreditCard> cards)
         {
             return _cards = cards;

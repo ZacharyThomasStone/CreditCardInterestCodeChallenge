@@ -1,5 +1,4 @@
-﻿using System;
-using CreditCardInterestCalculator.Models;
+﻿using CreditCardInterestCalculator.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CreditCardInterestCalculator.Tests
@@ -7,31 +6,31 @@ namespace CreditCardInterestCalculator.Tests
     [TestClass]
     public class CardTests
     {
-        Discover discover = new Discover(100);
-        MasterCard masterCard = new MasterCard(100);
-        Visa visa = new Visa(100);
+        readonly Discover _discover = new Discover(100);
+        readonly MasterCard _masterCard = new MasterCard(100);
+        readonly Visa _visa = new Visa(100);
 
 
         //Discover Card Tests
         [TestMethod]
         public void TestDiscoverGetInterestRateMethod()
         {
-            double interestRate = discover.GetInterestRate();
+            double interestRate = _discover.GetInterestRate();
             Assert.AreEqual(0.01, interestRate);
         }
 
         [TestMethod]
         public void TestDiscoverGetInterestMethod()
         {
-            discover.SetInterest();
-            double interest = discover.GetInterest();
+            _discover.SetInterest();
+            double interest = _discover.GetInterest();
             Assert.AreEqual(1, interest);
         }
 
         [TestMethod]
         public void TestDiscoverGetBalanceMethod()
         {
-            double balance = discover.GetBalance();
+            double balance = _discover.GetBalance();
             Assert.AreEqual(100, balance);
 
         }
@@ -40,22 +39,22 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestMasterCardGetInterestRateMethod()
         {
-            double interestRate = masterCard.GetInterestRate();
+            double interestRate = _masterCard.GetInterestRate();
             Assert.AreEqual(0.05, interestRate);
         }
 
         [TestMethod]
         public void TestMasterCardGetInterestMethod()
         {
-            masterCard.SetInterest();
-            double interest = masterCard.GetInterest();
+            _masterCard.SetInterest();
+            double interest = _masterCard.GetInterest();
             Assert.AreEqual(5, interest);
         }
 
         [TestMethod]
         public void TestMasterCardGetBalanceMethod()
         {
-            double balance = masterCard.GetBalance();
+            double balance = _masterCard.GetBalance();
             Assert.AreEqual(100, balance);
 
         }
@@ -64,22 +63,22 @@ namespace CreditCardInterestCalculator.Tests
         [TestMethod]
         public void TestVisaCardGetInterestRateMethod()
         {
-            double interestRate = visa.GetInterestRate();
+            double interestRate = _visa.GetInterestRate();
             Assert.AreEqual(0.10, interestRate);
         }
 
         [TestMethod]
         public void TestVisaCardGetInterestMethod()
         {
-            visa.SetInterest();
-            double interest = visa.GetInterest();
+            _visa.SetInterest();
+            double interest = _visa.GetInterest();
             Assert.AreEqual(10, interest);
         }
 
         [TestMethod]
         public void TestVisaCardGetBalanceMethod()
         {
-            double balance = visa.GetBalance();
+            double balance = _visa.GetBalance();
             Assert.AreEqual(100, balance);
 
         }

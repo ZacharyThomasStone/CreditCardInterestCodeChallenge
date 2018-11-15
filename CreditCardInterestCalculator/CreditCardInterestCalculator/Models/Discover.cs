@@ -36,8 +36,8 @@ namespace CreditCardInterestCalculator.Models
 
         public double SetBalance(double balance)
         {
-           return _balance = balance;
-         
+            return _balance = balance;
+
         }
     }
 }

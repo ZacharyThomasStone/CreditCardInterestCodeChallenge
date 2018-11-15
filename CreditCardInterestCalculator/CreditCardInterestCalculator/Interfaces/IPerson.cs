@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using CreditCardInterestCalculator.Models;
 
 namespace CreditCardInterestCalculator.Interfaces
@@ -10,5 +7,8 @@ namespace CreditCardInterestCalculator.Interfaces
     {
         List<Wallet> SetWallets(List<Wallet> wallets);
         List<Wallet> GetWallets();
+        double CalculateTotalInterest();
+        double GetInterest();
+        double SetInterest(double interest);
     }
 }

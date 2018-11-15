@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using CreditCardInterestCalculator.Interfaces;
 using CreditCardInterestCalculator.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -20,9 +16,9 @@ namespace CreditCardInterestCalculator.Tests
                 new Visa(100),
                 new MasterCard(100),
                 new Discover(100),
-             
+
             };
-            
+
             List<Wallet> wallets = new List<Wallet>
             {
                 new Wallet(cards)
